@@ -1,11 +1,50 @@
 @charset 'UTF-8';
 @font-face{font-family:'FontAwesome';src:url('font/fontawesome-webfont.eot?v=4.0.1');src:url('font/fontawesome-webfont.eot?#iefix&v=4.0.1') format('embedded-opentype'),url('font/fontawesome-webfont.woff?v=4.0.1') format('woff'),url('font/fontawesome-webfont.ttf?v=4.0.1') format('truetype'),url('font/fontawesome-webfont.svg?v=4.0.1#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}
 
-/*
-	MegaCorp by TEMPLATED
-    templated.co @templatedco
-    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
+@font-face
+{
+	font-family: '__Pragmatica_5';
+	src: url('../fonts/pragmatica-bold.eot');
+	src: local('☺'), url('../fonts/pragmatica-bold.woff') format('woff'), url('../fonts/pragmatica-bold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: '__Pragmatica_5';
+	src: url('../fonts/pragmatica.eot');
+	src: local('☺'), url('../fonts/pragmatica.woff') format('woff'), url('../fonts/pragmatica.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: '__Pragmatica_5';
+	src: url('../fonts/pragmaticalight.eot');
+	src: local('☺'), url('../fonts/pragmaticalight.woff') format('woff'), url('../fonts/pragmaticalight.svg') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: '__GoodCyr-WideBook_6';
+	src: url('../fonts/goodcyrwidebook.eot');
+	src: local('☺'), url('../fonts/goodcyrwidebook.woff') format('woff'), url('../fonts/goodcyrwidebook.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: '__Pragmatica_5';
+	src: url('../fonts/pragmaticaextralight.eot');
+	src: local('☺'), url('../fonts/pragmaticaextralight.woff') format('woff'), url('../fonts/pragmaticaextralight.svg') format('svg');
+	font-weight: 200;
+	font-style: normal;
+}
 
 body
 {
@@ -917,6 +956,115 @@ a:hover
 		text-decoration: none;
 	}
 
+	/* Yandex contact */
+	#kontakt
+	{
+		position: relative;
+		width: 22px;
+		margin-right: -10000px;
+		left: 959px;
+	}
+
+
+#u1426
+{
+	z-index: 421;
+	width: 349px;
+	height: 386px;
+	background-color: #FFFFFF;
+	opacity: 0.92;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=92)";
+	filter: alpha(opacity=92);
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 33px;
+	left: 101px;
+}
+
+#u1427-4
+{
+	z-index: 422;
+	width: 450px;
+	min-height: 45px;
+	background-color: transparent;
+	color: #000000;
+	line-height: 42px;
+	font-size: 35px;
+	text-align: center;
+	font-family: '__Pragmatica_5';
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: -400px;
+	left: 48px;
+}
+
+#u1428-4
+{
+	z-index: 426;
+	width: 420px;
+	min-height: 25px;
+	background-color: transparent;
+	color: #000000;
+	text-align: center;
+	font-family: '__Pragmatica_5';
+	font-weight: 200;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 0px;
+	left: 63px;
+}
+
+#u1429-5
+{
+	z-index: 430;
+	width: 420px;
+	min-height: 25px;
+	background-color: transparent;
+	color: #000000;
+	text-align: center;
+	font-family: '__Pragmatica_5';
+	font-weight: 200;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 0px;
+	left: 63px;
+}
+
+#u1429-2
+{
+	text-transform: uppercase;
+}
+
+#u1430-4
+{
+	z-index: 435;
+	width: 403px;
+	min-height: 25px;
+	background-color: transparent;
+	color: #000000;
+	line-height: 30px;
+	font-size: 25px;
+	text-align: center;
+	font-family: '__Pragmatica_5';
+	font-weight: 200;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 138px;
+	left: 71px;
+}
+
+#u1441 {
+	z-index: 435;
+	position: absolute;
+	width: 326px;
+	height: 197px;
+	border-style: none;
+	border-color: transparent;
+	background: transparent url(../images/123-u1441-fr.jpg) no-repeat center center;
+	background-size: cover;
+	left: 185px;
+}
 /* Tel Button */
 
 .telButton .telButton_background {
