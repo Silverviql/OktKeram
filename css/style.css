@@ -1,50 +1,6 @@
 @charset 'UTF-8';
 @font-face{font-family:'FontAwesome';src:url('font/fontawesome-webfont.eot?v=4.0.1');src:url('font/fontawesome-webfont.eot?#iefix&v=4.0.1') format('embedded-opentype'),url('font/fontawesome-webfont.woff?v=4.0.1') format('woff'),url('font/fontawesome-webfont.ttf?v=4.0.1') format('truetype'),url('font/fontawesome-webfont.svg?v=4.0.1#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}
 
-@font-face
-{
-	font-family: '__Pragmatica_5';
-	src: url('../fonts/pragmatica-bold.eot');
-	src: local('☺'), url('../fonts/pragmatica-bold.woff') format('woff'), url('../fonts/pragmatica-bold.svg') format('svg');
-	font-weight: 700;
-	font-style: normal;
-}
-
-@font-face
-{
-	font-family: '__Pragmatica_5';
-	src: url('../fonts/pragmatica.eot');
-	src: local('☺'), url('../fonts/pragmatica.woff') format('woff'), url('../fonts/pragmatica.svg') format('svg');
-	font-weight: 400;
-	font-style: normal;
-}
-
-@font-face
-{
-	font-family: '__Pragmatica_5';
-	src: url('../fonts/pragmaticalight.eot');
-	src: local('☺'), url('../fonts/pragmaticalight.woff') format('woff'), url('../fonts/pragmaticalight.svg') format('svg');
-	font-weight: 300;
-	font-style: normal;
-}
-
-@font-face
-{
-	font-family: '__GoodCyr-WideBook_6';
-	src: url('../fonts/goodcyrwidebook.eot');
-	src: local('☺'), url('../fonts/goodcyrwidebook.woff') format('woff'), url('../fonts/goodcyrwidebook.svg') format('svg');
-	font-weight: 400;
-	font-style: normal;
-}
-
-@font-face
-{
-	font-family: '__Pragmatica_5';
-	src: url('../fonts/pragmaticaextralight.eot');
-	src: local('☺'), url('../fonts/pragmaticaextralight.woff') format('woff'), url('../fonts/pragmaticaextralight.svg') format('svg');
-	font-weight: 200;
-	font-style: normal;
-}
 
 body
 {
@@ -315,12 +271,6 @@ a:hover
 		line-height: 1.75em;
 		list-style: decimal;
 	}
-
-/*********************************************************************************/
-/* Icons                                                                         */
-/* Powered by Font Awesome by Dave Gandy | http://fontawesome.io                 */
-/* Licensed under the SIL OFL 1.1 (font), MIT (CSS)                              */
-/*********************************************************************************/
 
 	.fa
 	{
@@ -835,7 +785,7 @@ a:hover
 
 	#wrapper
 	{
-		padding: 5em 0em 3em 0em;
+			padding: 5em 0em 3em 0em;
 	}
 
 	#page
@@ -1265,10 +1215,13 @@ a:hover
 
 /* Button gallery */
 .wrapper{
-	width: 640px;
-	height: 480px;
+/*	width: 640px;*/
+	height: 100%;
 	margin: 10px auto;
-}
+	display: block;
+	width: 100%;
+	text-align: center;
+	}
 
 .left_right{
 	position: absolute;
@@ -1320,3 +1273,28 @@ body{background: url(../images/pic013.jpg) repeat;;}
 }
 
 
+/* Style block */
+
+/* Для небольших устройств (смартфоны) */
+.keram {
+	max-width: 100%;
+	display: inline-block;
+	margin-right: 10px; /* Отступ справа */
+	margin-bottom: 10px; /* Отступ снизу */
+}
+/* Для средних устройств (планшеты) */
+@media (min-width: 420px) {
+	.keram {
+		max-width: 90%;
+		margin-right: 10px; /* Отступ справа */
+		margin-bottom: 10px; /* Отступ снизу */
+	}
+}
+/* Для больших устройств (ноуты, пк) */
+@media (min-width: 760px) {
+	.keram {
+		max-width: 70%;
+		margin-right: 10px; /* Отступ справа */
+		margin-bottom: 10px; /* Отступ снизу */
+	}
+}

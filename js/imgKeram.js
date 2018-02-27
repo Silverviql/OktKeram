@@ -55,4 +55,4 @@ function btn_noshow(){
 }
 
 //Выводим картинки
-document.write('<img id="images" src="' + imageArray[0] + '"  height="100%" width="100%">');
+document.write('<img id="images" src="' + imageArray[0] + '"  class="wrapper"">');
