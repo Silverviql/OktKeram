@@ -887,9 +887,9 @@ a:hover
 	}
 
 
-/* Copyright */
+/* Footer */
 
-	#copyright
+	#footer
 	{
 		overflow: hidden;
 		padding: 3em 0em 6em 0em;
@@ -897,17 +897,17 @@ a:hover
 		text-align: center;
 	}
 	
-	#copyright p
+	#footer p
 	{
 		font-size: 1em;
 	}
 	
-	#copyright a
+	#footer a
 	{
-		color: #949494;
+		color: #ffffff;
 	}
 	
-	#copyright a:hover
+	#footer a:hover
 	{
 		text-decoration: none;
 	}
@@ -1303,3 +1303,108 @@ body{background: url(../images/pic013.jpg) repeat;;}
 		margin-bottom: 10px; /* Отступ снизу */
 	}
 }
+/* Social block */
+.social {
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	position: relative;
+	width: 100%;
+}
+.social li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+}
+.social li a {
+	font-size: 16px;
+	display: table;
+	width: 40px;
+	height: 40px;
+	margin: 0 4px;
+}
+.social li a i {
+	display: table-cell;
+	vertical-align: middle;
+}
+.social li a:hover, .social li a:active, .social li a:focus {
+	text-decoration: none;
+	border-bottom: none;
+}
+.social li a.social-box {
+	background: #2b8fc4;
+	color: #fff;
+}
+.social li a.social-circle {
+	background: #2b8fc4;
+	color: #fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+}
+.social li a:hover {
+	background: #393e46 !important;
+}
+.social.social-box a {
+	background: #2b8fc4;
+	color: #fff;
+}
+.social.social-circle a {
+	background: #2b8fc4;
+	color: #fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+}
+
+	.icon-twitter:before {
+		content: "\f099";
+	}
+	.icon-facebook:before {
+		content: "\f09a";
+	}
+	.icon-youtube:before {
+		content: "\f167";
+	}
+	.icon-instagram:before {
+		content: "\f16d";
+	}
+	.icon-placeholder-for-map:before {
+		content: "\f041";
+	}
+	.icon-clock:before {
+		content: "\f017";
+
+	}
+	.text-center  { text-align: center; }
+
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon/icomoon.eot?qtatmt');
+	src:url('../fonts/icomoon/icomoon.eot?qtatmt#iefix') format('embedded-opentype'),
+	url('../fonts/icomoon/icomoon.ttf?qtatmt') format('truetype'),
+	url('../fonts/icomoon/icomoon.woff?qtatmt') format('woff'),
+	url('../fonts/icomoon/icomoon.svg?qtatmt#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+	[class^="icon-"], [class*=" icon-"] {
+					 font-family: 'icomoon';
+					 speak: none;
+					 font-style: normal;
+					 font-weight: normal;
+					 font-variant: normal;
+					 text-transform: none;
+					 line-height: 1;
+
+					 /* Better Font Rendering =========== */
+					 -webkit-font-smoothing: antialiased;
+					 -moz-osx-font-smoothing: grayscale;
+				 }
+
+
