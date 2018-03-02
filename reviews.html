@@ -1,3 +1,4 @@
+<?php include("connect.php"); ?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -13,6 +14,7 @@
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
         <script src="js/script.js"></script>
+        <script src="js/comments.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -32,9 +34,9 @@
                 <nav id="nav">
                     <ul>
                         <li><a href="index.html">Главная</a></li>
-                        <li><a href="twocolumn1.html">Фотогалерея</a></li>
-                        <li class="current_page_item"><a href="twocolumn2.html">Отзывы Покупателей</a></li>
-                        <li><a href="onecolumn.html">Контакты</a></li>
+                        <li><a href="fotogallery.html">Фотогалерея</a></li>
+                        <li class="current_page_item"><a href="reviews.php">Отзывы Покупателей</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
                     </ul>
                 </nav>
                 
@@ -48,71 +50,48 @@
         	<div id="page">
             	<div class="container">
                 	<div class="row">
-                    
-                    	<div id="sidebar" class="4u">
-                        	<div class="row">
-                                <section id="box1" class="6u">
-                                    <h2>Nulla  eleifend</h2>
-                                    <ul class="style4">
-                                        <li class="first"><a href="#">Maecenas luctus</a></li>
-                                        <li><a href="#">Etiam rhoncus erat</a></li>
-                                        <li><a href="#">Donec metus sapien</a></li>
-                                        <li><a href="#">Integer quis urna</a></li>
-                                        <li><a href="#">Etiam rhoncus erat</a></li>
-                                        <li><a href="#">Donec metus sapien</a></li>
-                                        <li><a href="#">Etiam volutpat erat</a></li>
-                                    </ul>
-                                </section>
-                                <section class="6u">
-                                    <h2>Nulla  eleifend</h2>
-                                    <ul class="style4">
-                                        <li class="first"><a href="#">Maecenas luctus</a></li>
-                                        <li><a href="#">Etiam rhoncus erat</a></li>
-                                        <li><a href="#">Donec metus sapien</a></li>
-                                        <li><a href="#">Integer quis urna</a></li>
-                                        <li><a href="#">Etiam rhoncus erat</a></li>
-                                        <li><a href="#">Donec metus sapien</a></li>
-                                        <li><a href="#">Etiam volutpat erat</a></li>
-                                    </ul>
-                                </section>
-                            </div>
-                            <section id="box2">
-                                <h2>Ipsum Consequat</h2>
-                                <ul class="style2">
-                                    <li class="first">
-                                        <p><a href="#"><img src="images/pics07.jpg" alt="">Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus nibh in augue praesent congue rutrum. </a></p>
-                                    </li>
-                                    <li>
-                                        <p><a href="#"><img src="images/pics08.jpg" alt="">Aliquam lacinia metus ut elit. Suspendisse iaculis mauris nec lorem. Donec leo, vivamus fermentum augue praesent congue rutrum.</a></p>
-                                    </li>
-                                    <li>
-                                        <p><a href="#"><img src="images/pics09.jpg" alt="">Suspendisse sit amet tellus in eros bibendum condimentum. Donec leo, fermentum nibh in augue praesent a lacus congue rutrum. </a></p>
-                                    </li>
-                                    <li>
-                                        <p><a href="#"><img src="images/pics10.jpg" alt="">Aliquam lacinia metus ut elit. Suspendisse iaculis mauris nec lorem. Donec leo, vivamus fermentum augue praesent congue rutrum.</a></p>
-                                    </li>
-                                </ul>
-                                <a href="#" class="button button-style1">Read More</a>
-                            </section>
-                        </div>
+
 
                     	<div id="content" class="8u skel-cell-important">
                         	<article>
                             	<header>
                                     <h2>Praesent mattis condimentum</h2>
                                 </header>
+                                <div id="commentBlock">
+                                  <script language="php">
+                                        $result = mysql_query("SELECT * FROM messages",$db);
+                                        $comment = mysql_fetch_array($result);
+                                        do{
+                                        echo "<div class='comment'>Автор: <strong>".$comment['author']."</strong>
+                                    <br>".$comment['message']."</div>";
+                                }while($comment = mysql_fetch_array($result));
+                                  </script>
+
+                                 </div>
+
+                        <form action="sendMessage.php" method="post" name="form">
+                            <p>
+                                Автор:<br>
+                                <input name="author" type="text" id="author">
+                            </p>
+                            <p>
+                                Текст сообщения:<br>
+                                <textarea name="message" rows="5" cols="50" id="message"></textarea>
+                            </p>
+                            <input name="js" type="hidden" value="no" id="js">
+                            <p>
+                                <input name="button" type="submit" value="Отправить" id="send"> <span id="resp"></span>
+                            </p>
+                        </form>
+
+
+
+
                                 <a href="#" class="image-style1"><img src="images/pic012.jpg" alt=""></a>
                                 <p>Pellentesque pede. Donec pulvinar ullamcorper metus. In eu odio at lectus pulvinar mollis. Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed blandit. Phasellus pellentesque, ante nec iaculis dapibus, eros justo auctor lectus, a lobortis lorem mauris quis nunc. Praesent pellentesque facilisis elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. In hac habitasse platea dictumst. Nullam id ante eget dui vulputate aliquam. Pellentesque erat erat, tincidunt in, eleifend accumsan, malesuada eget, augue. Suspendisse sit amet tellus in eros bibendum condimentum. Vestibulum suscipit volutpat nulla. Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor enim accumsan lacinia. Donec condimentum, urna non molestie semper, ligula enim ornare nibh, quis laoreet eros quam eget ante. Quisque eleifend. Phasellus tempor vehicula justo. Aliquam lacinia metus ut elit. Praesent pellentesque facilisis elit.</p>
                                 <p>Quisque eleifend. Phasellus tempor vehicula justo. Aliquam lacinia metus ut elit. Suspendisse iaculis mauris nec lorem.							Donec leo. Vivamus fermentum nibh in augue. Praesent a lacus at urna congue rutrum. Nulla enim eros, porttitor eu, tempus id, varius non, nibh. Duis enim nulla, luctus eu, dapibus lacinia, venenatis id, quam. Vestibulum imperdiet, magna nec eleifend rutrum, nunc lectus vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Pellentesque pede. Donec pulvinar ullamcorper metus. In eu odio at lectus pulvinar mollis. Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed blandit. Phasellus pellentesque, ante nec iaculis dapibus, eros justo auctor lectus, a lobortis lorem mauris quis nunc. </p>
                                 <ul class="style5">
-                                    <li><a href="#">Integer sit amet pede vel arcu aliquet pretium.</a></li>
-                                    <li><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</a></li>
-                                    <li><a href="#">Phasellus nec erat sit amet nibh pellentesque congue.</a></li>
-                                    <li><a href="#">Pellentesque quis elit non lectus gravida blandit.</a></li>
-                                    <li><a href="#">Maecenas vitae orci vitae tellus feugiat eleifend.</a></li>
-                                </ul>
-        <p>Pellentesque pede. Donec pulvinar ullamcorper metus. In eu odio at lectus pulvinar mollis. Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed blandit. Phasellus pellentesque, ante nec iaculis dapibus, eros justo auctor lectus, a lobortis lorem mauris quis nunc. Praesent pellentesque facilisis elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. In hac habitasse platea dictumst. Nullam id ante eget dui vulputate aliquam. Pellentesque erat erat, tincidunt in, eleifend accumsan, malesuada eget, augue. Suspendisse sit amet tellus in eros bibendum condimentum. Vestibulum suscipit volutpat nulla. Maecenas pede nisl, elementum eu, ornare ac, malesuada at, erat. Proin gravida orci porttitor enim accumsan lacinia. Donec condimentum, urna non molestie semper, ligula enim ornare nibh, quis laoreet eros quam eget ante. Quisque eleifend. Phasellus tempor vehicula justo. Aliquam lacinia metus ut elit. Praesent pellentesque facilisis elit.</p>
-                            </article>
+                             </article>
                         </div>
                     
                     </div>
@@ -154,7 +133,7 @@
                     <ul class="social social-circle">
                         <li><a href="#"><i class="icon-twitter"></i></a></li>
                         <li><a href="#"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-youtube"></i></a></li>
+                        <li><a href="#"><i class="icon-vk"></i></a></li>
                         <li><a href="#"><i class="icon-instagram"></i></a></li>
                     </ul>
                 </div>
