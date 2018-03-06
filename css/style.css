@@ -1368,4 +1368,10 @@ body{background: url(../images/pic013.jpg) repeat;;}
 					 -moz-osx-font-smoothing: grayscale;
 				 }
 
+#reviews
+{
+	position: relative;
+	padding: 6em 0em;
+	background: #FFFFFF;
 
+}
