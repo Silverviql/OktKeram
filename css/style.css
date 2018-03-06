@@ -1375,32 +1375,36 @@ body{background: url(../images/pic013.jpg) repeat;;}
 	background: #FFFFFF;
 
 }
-	/* Отзывы покупателей */
-	*{
-		margin:0;
-		padding:0;
-	}
 
-	a { color: #eee; text-decoration: none;}
-	a:hover { text-decoration: underline; }
 
-	#block_message{
-		width:100%;
-		margin:20px auto;
-		ont-size:13px;
-		color:#eee;
-		font-family:Arial, Helvetica, sans-serif;
-		font-family:Corbel,'Myriad Pro',Arial, Helvetica, sans-serif;
-	}
+/* block_message*/
+*{
+	margin:0;
+	padding:0;
+}
 
-	.block{
-		background-color: #7b8b98;
-		margin-bottom:25px;
-		padding:30px;
-	}
+a { color: #eee; text-decoration: none;}
+a:hover { text-decoration: underline; }
 
-	.block_main {
-		background-color: #7b8b98;
-		text-shadow: 1px 1px 0 black;
-		padding: 30px;
-	}
+#block_message{
+	font-size:13px;
+	color:#eee;
+	width: 100%;
+	margin:20px auto;
+}
+
+.block{
+	background-color: #7b8b98;
+	margin-bottom:25px;
+	padding:30px;
+}
+
+.block_main {
+	background-color: #7b8b98;
+	text-shadow: 1px 1px 0 black;
+	padding: 30px;
+}
+
+.block_main p {
+	margin: 20px 0 20px 0;
+}
