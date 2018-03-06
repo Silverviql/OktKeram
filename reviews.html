@@ -14,7 +14,6 @@
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
         <script src="js/script.js"></script>
-        <script src="js/comments.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -55,38 +54,74 @@
                     	<div id="content" class="8u skel-cell-important">
                         	<article>
                             	<header>
-
                                     <h2>
                                         <span style="color: rgb(12, 14, 15);">Отзывы Покупателей
                                          </span>
                                     </h2>
                                 </header>
-                                <div id="commentBlock">
-                                  <script language="php">
-                                        $result = mysql_query("SELECT * FROM messages",$db);
-                                        $comment = mysql_fetch_array($result);
-                                        do{
-                                        echo "<div class='comment'>Автор: <strong>".$comment['author']."</strong>
-                                          <br>".$comment['message']."</div>";
-                                       }while($comment = mysql_fetch_array($result));
-                                  </script>
 
-                                 </div>
+                                <div id="block_message">
+                                    <div class="block_main rounded">
+                                        <form method="post" action="shout.php">
+                                            <p>
+                                                Имя:<br>
+                                                <input type="text" id="name" name="name" />
+                                            </p>
+                                            <p>
+                                                Текст сообщения:<br>
+                                                <textarea type="text" id="message" name="message" class="message" rows="5" cols="50" ></textarea>
+                                            </p>
+                                            <p>
+                                                <input type="submit" id="submit" value="Отправить" />
+                                            </p>
+                                        </form>
+                                        <div id="shout"></div>
+                                    </div>
+                                </div>
 
-                        <form action="sendMessage.php" method="post" name="form">
-                            <p>
-                                Автор:<br>
-                                <input name="author" type="text" id="author">
-                            </p>
-                            <p>
-                                Текст сообщения:<br>
-                                <textarea name="message" rows="5" cols="50" id="message"></textarea>
-                            </p>
-                            <input name="js" type="hidden" value="no" id="js">
-                            <p>
-                                <input name="button" type="submit" value="Отправить" id="send"> <span id="resp"></span>
-                            </p>
-                        </form>
+                                <script type="text/javascript">
+                                    $(function() {
+                                        refresh_shoutbox();
+                                        setInterval("refresh_shoutbox()", 15000);
+
+                                        $("#submit").click(function() {
+                                            var name    = $("#name").val();
+                                            var message = $("#message").val();
+                                            var data            = 'name='+ name +'&message='+ message;
+
+                                            $.ajax({
+                                                type: "POST",
+                                                url: "shout.php",
+                                                data: data,
+                                                success: function(html){
+                                                    $("#shout").slideToggle(500, function(){
+                                                        $(this).html(html).slideToggle(500);
+                                                        $("#message").val("");
+                                                    });
+                                                }
+                                            });
+                                            return false;
+                                        });
+                                    });
+
+                                    function refresh_shoutbox() {
+                                        var data = 'refresh=1';
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "нужный файл",
+                                            data: data,
+                                            success: function(html){
+                                                $("#shout").html(html);
+                                            }
+                                        });
+                                    }
+                                    //заполнить страницу в первый раз
+                                    refresh_shoutbox();
+                                    // обновить каждые 15 секунд
+                                    setInterval("refresh_shoutbox()", 15000);
+
+
+                                </script>
                     </div>
                 </div>
             </div>

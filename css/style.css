@@ -1375,3 +1375,32 @@ body{background: url(../images/pic013.jpg) repeat;;}
 	background: #FFFFFF;
 
 }
+	/* Отзывы покупателей */
+	*{
+		margin:0;
+		padding:0;
+	}
+
+	a { color: #eee; text-decoration: none;}
+	a:hover { text-decoration: underline; }
+
+	#block_message{
+		width:100%;
+		margin:20px auto;
+		ont-size:13px;
+		color:#eee;
+		font-family:Arial, Helvetica, sans-serif;
+		font-family:Corbel,'Myriad Pro',Arial, Helvetica, sans-serif;
+	}
+
+	.block{
+		background-color: #7b8b98;
+		margin-bottom:25px;
+		padding:30px;
+	}
+
+	.block_main {
+		background-color: #7b8b98;
+		text-shadow: 1px 1px 0 black;
+		padding: 30px;
+	}
