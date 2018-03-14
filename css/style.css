@@ -63,6 +63,7 @@ a:hover
 
 	.button
 	{
+        cursor: pointer;
 		position: relative;
 		display: inline-block;
 		background: #2B8FC4;
